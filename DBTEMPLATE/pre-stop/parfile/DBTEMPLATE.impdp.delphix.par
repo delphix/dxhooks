@@ -1,5 +1,5 @@
 schemas=DELPHIX
 dumpfile=DEVDB.DELPHIX.dmp
 logfile=DEVDB.DELPHIX.log
-REUSE_DUMPFILES=Y
+table_exists_action=REPLACE
 content=ALL
