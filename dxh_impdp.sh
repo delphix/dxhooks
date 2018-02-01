@@ -109,7 +109,7 @@ exec_sqlplus_sql  "${sqlcmd}"
 
 log_echo "executing ${ORACLE_HOME}/bin/impdp \"'/ as sysdba'\" parfile=\"${PARFILE_DIR}/${parfile}\" directory=\"${dxh_datapump}\""
 
-${ORACLE_HOME}/bin/expdp "'/ as sysdba'" parfile="${PARFILE_DIR}/${parfile}" directory="${dxh_datapump}" 
+${ORACLE_HOME}/bin/impdp "'/ as sysdba'" parfile="${PARFILE_DIR}/${parfile}" directory="${dxh_datapump}" 
 
 # drop up datadump directory
 sqlcmd="drop directory ${dxh_datapump};"
