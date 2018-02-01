@@ -1,0 +1,5 @@
+schemas=DELPHIX
+dumpfile=DEVDB.DELPHIX.dmp
+logfile=DEVDB.DELPHIX.log
+REUSE_DUMPFILES=Y
+content=ALL
