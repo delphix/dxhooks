@@ -8,11 +8,11 @@ It is written in shell and easily adaptable by DBAs.
 
 ## What's new
 
-Please check a [change log](https://github.com/delphix/dxtoolkit/blob/master/CHANGELOG.md) for list of changes.
+Please check a [change log](https://github.com/delphix/dxhooks/blob/master/CHANGELOG.md) for list of changes.
 
 ## How to get started
 
-Check a [documentation](https://github.com/delphix/dxtoolkit/wiki) for more details
+Check a [documentation](https://github.com/delphix/dxhooks/wiki) for more details
 
 ## Legalness
 ```
