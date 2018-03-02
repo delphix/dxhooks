@@ -1,2 +1,31 @@
 # dxhooks
-Framework to easily extend VDBs through hooks
+
+## What is it
+
+dxhooks is a set of scripts, which are delivered by Delphix professional services team. The script is written as a framework to extend VDBs through hooks.
+
+It is written in shell and easily adaptable by DBAs. 
+
+## What's new
+
+Please check a [change log](https://github.com/delphix/dxtoolkit/blob/master/CHANGELOG.md) for list of changes.
+
+## How to get started
+
+Check a [documentation](https://github.com/delphix/dxtoolkit/wiki) for more details
+
+## Legalness
+```
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+```
+Copyright (c) 2014, 2016 by Delphix. All rights reserved.
