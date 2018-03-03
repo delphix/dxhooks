@@ -6,10 +6,6 @@ dxhooks is a set of scripts, which are delivered by Delphix professional service
 
 It is written in shell and easily adaptable by DBAs. 
 
-## What's new
-
-Please check a [change log](https://github.com/delphix/dxhooks/blob/master/CHANGELOG.md) for list of changes.
-
 ## How to get started
 
 Check a [documentation](https://github.com/delphix/dxhooks/wiki) for more details
