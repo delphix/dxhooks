@@ -93,10 +93,11 @@ LOGDIR="${BASEDIR}/${DBNAME}/logs"
 LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.${dte}.log"
 export SQLDIR LOGDIR LOGFILE SCRIPTDIR BASEDIR 
 
-log_echo "${PROGNAME} execution started"
 
 # rotate logfile 
 [ -r ${LOGFILE} ] && mv ${LOGFILE} ${LOGFILE}.1
+
+log_echo "${PROGNAME} execution started"
 
 # Check if directories exists
 check_dir_exists "${LOGDIR}"
@@ -109,10 +110,10 @@ log_echo "executing ${hook_op} dxh_wrapper_script.sh"
 ${SCRIPTDIR}/dxh_wrapper_script.sh ${BASEDIR} ${LOGFILE} ${DBNAME} ${hook_op} >> ${LOGFILE} 2>&1
 
 # email code to be tested
-#if [ ${mail_flag} = "true" ]; then
-#    SUBJECT="${PROGNAME}: ${hook_op} logfile"
-#    mail_attachment  "${SUBJECT}" "${SENDER}" "${RECEPIENT}" "${LOGFILE}"
-#fi
+if [ ${mail_flag} = "true" ]; then
+    SUBJECT="${PROGNAME}: ${hook_op} logfile"
+    mail_attachment  "${SUBJECT}" "${SENDER}" "${RECIPIENT}" "${LOGFILE}"
+fi
 
 log_echo "${PROGNAME} execution completed."
 

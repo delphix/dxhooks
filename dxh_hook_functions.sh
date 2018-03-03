@@ -64,11 +64,60 @@ check_file_exists() {
    fi
 }
 
+#exec_sqlplus_script() {
+#sqlscript=${1}
+#debug_echo "entering :::exec_sqlplus_script:::"
+#   sqlout=`${ORACLE_HOME}/bin/sqlplus -s / as sysdba << EOF 
+#@${sqlscript}
+#EOF`
+#   debug_echo "${sqlout}"
+#   errcode=`echo "${sqlout}" | grep -c "ORA-"`
+#   return "${errcode}"
+#}
+#
+
 exec_sqlplus_script() {
-debug_echo "entering :::exec_sqlplus_script:::"
 sqlscript=${1}
+SERVICE_NAME=${2}
+USERNAME=${3}
+PASSWORD=${4}
+CONN=""
+
+    if [ -z ${SERVICE_NAME} ]; then
+        CONN=""
+    else
+        CONN="conn ${USERNAME}/${PASSWORD}@${SERVICE_NAME}"
+    fi
+
+    debug_echo "entering :::exec_sqlplus_script:::"
+    debug_echo "executing ${sqlscript}"
    sqlout=`${ORACLE_HOME}/bin/sqlplus -s / as sysdba << EOF 
+${CONN}
 @${sqlscript}
+EOF`
+   debug_echo "${sqlout}"
+   errcode=`echo "${sqlout}" | grep -c "ORA-"`
+   return "${errcode}"
+}
+
+exec_sqlplus_check() {
+sqlscript=${1}
+SERVICE_NAME=${2}
+USERNAME=${3}
+PASSWORD=${4}
+CONN=""
+sqlcmd="select sysdate from dual;"
+
+    if [ -z ${CONN} ]; then
+        CONN=""
+    else
+        CONN="conn ${USERNAME}/${PASSWORD}@${SERVICE_NAME}"
+    fi
+
+   debug_echo "entering :::exec_sqlplus_script:::"
+   sqlout=`${ORACLE_HOME}/bin/sqlplus -s / as sysdba << EOF 
+${CONN}
+@${sqlcmd}
 EOF`
    debug_echo "${sqlout}"
    errcode=`echo "${sqlout}" | grep -c "ORA-"`
