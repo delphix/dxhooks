@@ -64,18 +64,6 @@ check_file_exists() {
    fi
 }
 
-#exec_sqlplus_script() {
-#sqlscript=${1}
-#debug_echo "entering :::exec_sqlplus_script:::"
-#   sqlout=`${ORACLE_HOME}/bin/sqlplus -s / as sysdba << EOF 
-#@${sqlscript}
-#EOF`
-#   debug_echo "${sqlout}"
-#   errcode=`echo "${sqlout}" | grep -c "ORA-"`
-#   return "${errcode}"
-#}
-#
-
 exec_sqlplus_script() {
 sqlscript=${1}
 SERVICE_NAME=${2}
@@ -148,27 +136,14 @@ EOF`
    return "${errcode}"
 }
 
-mail_attachment () {
-debug_echo "entering :::mail_attachment():::"
-subject=$1
-raddr=$2
-to=$3
-attach=$4
-battach=`basename ${attach} | tr -d '\n'`
-uuencode ${attach} ${battach} | mailx  -r "${raddr}" -s "${subject}" "${to}"
-}
-
 mail_text () {
 debug_echo "entering :::mail_text():::"
 subject=$1
 raddr=$2
 to=$3
-body=$4
-mailx  -r "${raddr}" -s "${subject}" "${to}" << EOF
-${body}
-EOF
+content=$4
+   mailx  -r "${raddr}" -s "${subject}" "${to}" < ${content}
 }
-
 
 
 
