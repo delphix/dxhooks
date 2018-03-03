@@ -92,7 +92,7 @@ fi
 SQLDIR="${BASEDIR}/${DBNAME}/${hook_op}/sql"
 SCRIPTDIR="${BASEDIR}/${DBNAME}/${hook_op}/scripts"
 LOGDIR="${BASEDIR}/${DBNAME}/logs"
-LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.${dte}.log"
+LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.log"
 export SQLDIR LOGDIR LOGFILE SCRIPTDIR BASEDIR 
 
 

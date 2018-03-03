@@ -90,7 +90,7 @@ fi
 
 PARFILE_DIR="${BASEDIR}/${DBNAME}/${hook_op}/parfile"
 LOGDIR="${BASEDIR}/${DBNAME}/logs"
-LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.${dte}.log"
+LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.log"
 export PARFILE_DIR LOGDIR LOGFILE
 
 log_echo "${PROGNAME} execution started"

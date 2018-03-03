@@ -29,6 +29,7 @@ PROGNAME=$(basename $0)
 DBNAME=""
 dte=`date '+%Y%m%d' | tr -d '\n'`
 OPERATION="config-clone|pre-refresh|post-refresh|pre-snapshot|post-snapshot|pre-rewind|post-rewind|pre-start|post-stop"
+mail_flag="false"
 
 . ${BASEDIR}/dxh_hook_profile.sh
 . ${BASEDIR}/dxh_hook_functions.sh
@@ -90,7 +91,7 @@ fi
 SQLDIR="${BASEDIR}/${DBNAME}/${hook_op}/sql"
 SCRIPTDIR="${BASEDIR}/${DBNAME}/${hook_op}/scripts"
 LOGDIR="${BASEDIR}/${DBNAME}/logs"
-LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.${dte}.log"
+LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.log"
 export SQLDIR LOGDIR LOGFILE SCRIPTDIR BASEDIR 
 
 
