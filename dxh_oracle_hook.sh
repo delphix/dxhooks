@@ -113,7 +113,7 @@ ${SCRIPTDIR}/dxh_wrapper_script.sh ${BASEDIR} ${LOGFILE} ${DBNAME} ${hook_op} >>
 # email code to be tested
 if [ ${mail_flag} = "true" ]; then
     SUBJECT="${PROGNAME}: ${hook_op} logfile"
-    mail_attachment  "${SUBJECT}" "${SENDER}" "${RECIPIENT}" "${LOGFILE}"
+    mail_text  "${SUBJECT}" "${SENDER}" "${RECIPIENT}" "${LOGFILE}"
 fi
 
 log_echo "${PROGNAME} execution completed."
