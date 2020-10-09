@@ -56,7 +56,7 @@ do
    esac
 done
 
-if [ -z "${src_dir}" ] && [ -z "${tgt_dir}" ]; then
+if [ -z "${src_dir}" ] || [ -z "${tgt_dir}" ]; then
    usage
    exit 1
 fi
