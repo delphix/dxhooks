@@ -41,7 +41,7 @@ HOOK_OP=${4}
 # sample code to initiate impdp
 # /softwares/scripts/hooks/dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
 
-# sample code to add db name to oratab
+# sample code to add db name to oratab and tnsnames
 # ${BASEDIR}/add_oratab_tnsname.sh 1521
 
 # sample code to "disable" production database links and recompile parallel 4
