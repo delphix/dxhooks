@@ -39,10 +39,16 @@ HOOK_OP=${4}
 #
 
 # sample code to initiate impdp
-#/softwares/scripts/hooks/dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
+# /softwares/scripts/hooks/dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
 
+# sample code to add db name to oratab and tnsnames
+# ${BASEDIR}/add_oratab_tnsname.sh 1521
 
+# sample code to "disable" production database links and recompile parallel 4
+# ${BASEDIR}/ora_vdb_dblink_confclone.sh ${ORACLE_SID} ${ORACLE_HOME} 4
 
+# sample code to optimize a VDB for Masking (expects ORACLE_SID and ORACLE_HOME to be set)
+# ${BASEDIR}/ora_vdb_masking_prep.sh 
 
 
 

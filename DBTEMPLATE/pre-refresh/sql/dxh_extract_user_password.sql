@@ -2,10 +2,19 @@
 set head off
 set pages 0
 set long 9999999
-spool &1/../../post-refresh/sql/dxh_reset_user_password.sql
-REM http://www.dba-oracle.com/t_save_reset_oracle_user_password.htm
-select 'alter user "'||username||'" identified by values '''||extract(xmltype(dbms_metadata.get_xml('USER',username)),'//USER_T/PASSWORD/text()').getStringVal()||''';'  old_password 
-from dba_users where username in ('DELPHIX', 'HR');
+set lin 999
+set longc 9999999
+set feed off
+spool ${SQLDIR}/../../post-refresh/sql/dxh_reset_user_password.sql
+REM Adopted from Ask Tom: https://asktom.oracle.com/pls/apex/f?p=100:11:0::::P11_QUESTION_ID:9537400300346732900
+with t as
+  ( select dbms_metadata.get_ddl('USER',username) ddl
+    from dba_users where username in ('DELPHIX', 'HR')
+  )
+select replace(substr(ddl,1,instr(ddl,'DEFAULT')-1),'CREATE','ALTER')||';'
+from t;
 spool off
+
+
 
 
