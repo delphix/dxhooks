@@ -39,8 +39,9 @@ HOOK_OP=${4}
 #
 
 # sample code to initiate impdp
-#/softwares/scripts/hooks/dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
+#¸dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
 
+/softwares/scripts/hooks/RMAN_AL_deletion.sh -o ${HOOK_OP}
 
 
 
