@@ -42,7 +42,7 @@ HOOK_OP=${4}
 #/softwares/scripts/hooks/dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
 
 #  sample code to delete AL
-##/softwares/scripts/hooks/RMAN_AL_deletion.sh -o ${HOOK_OP}
+##/home/delphix/dxhooks/RMAN_AL_deletion.sh -o ${HOOK_OP}
 
 
 
