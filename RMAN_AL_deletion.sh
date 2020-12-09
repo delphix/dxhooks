@@ -10,16 +10,6 @@ LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.log"
 .  ${BASEDIR}/dxh_hook_profile.sh
 .  ${BASEDIR}/dxh_hook_functions.sh
 
-usage() {
-   echo
-   echo "Usage: $0 -o <hook_operation> "
-   echo "Where: "
-   echo "  -o ${OPERATION}"
-   echo
-   exit 1
-}
-
-
 echo "RMAN Archived Log(ALL) DELETION started at `date`" >>  $LOGFILE
 
 $ORACLE_HOME/bin/rman nocatalog  <<EOF | tee  $LOGFILE
