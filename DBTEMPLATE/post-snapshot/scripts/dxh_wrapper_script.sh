@@ -43,11 +43,3 @@ HOOK_OP=${4}
 ###script for Archivelog deletion older than 7 days. Enter VDB name in DBNAME in RMAN_AL_deletion.sh script, you can change number of days in the script
 /home/delphix/dxhooks/RMAN_AL_deletion.sh -o ${HOOK_OP}
 
-
-
-
-
-
-
-
-
