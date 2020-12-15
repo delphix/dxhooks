@@ -39,9 +39,9 @@ HOOK_OP=${4}
 #
 
 # sample code to initiate impdp
-#¸dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
-
-/softwares/scripts/hooks/RMAN_AL_deletion.sh -o ${HOOK_OP}
+#/home/delphix/dxhooks/dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
+###script for Archivelog deletion older than 7 days. Enter VDB name in DBNAME in RMAN_AL_deletion.sh script, you can change number of days in the script
+/home/delphix/dxhooks/RMAN_AL_deletion.sh -o ${HOOK_OP}
 
 
 
