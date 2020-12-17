@@ -2,13 +2,14 @@
 
 BASEDIR=$(dirname $0)
 PROGNAME=$(basename $0)
-DBNAME="DEVDB"
+DBNAME=""
 dte=`date '+%Y%m%d' | tr -d '\n'`
 OPERATION="config-clone|pre-refresh|post-refresh|pre-snapshot|post-snapshot|pre-rewind|post-rewind|pre-start|post-stop"
 for i in $*
 do
    case $1 in
       -o) hook_op=$2; shift 2;;
+      -d) DBNAME=$2; shift 2;;
       -*) usage; exit 1;;
    esac
 done
@@ -19,8 +20,8 @@ if [ $(echo ${hook_op} | egrep -c ${OPERATION}) -eq 0 ]; then
 fi
 LOGDIR="${BASEDIR}/${DBNAME}/logs"
 LOGFILE="${LOGDIR}/${PROGNAME}.${hook_op}.log"
-.  ${BASEDIR}/dxh_hook_profile.sh
-.  ${BASEDIR}/dxh_hook_functions.sh
+. ${BASEDIR}/dxh_hook_profile.sh
+. ${BASEDIR}/dxh_hook_functions.sh
 
 echo "RMAN Archived Log(ALL) DELETION started at `date`" >>  $LOGFILE
 $ORACLE_HOME/bin/rman nocatalog  <<EOF | tee  $LOGFILE
