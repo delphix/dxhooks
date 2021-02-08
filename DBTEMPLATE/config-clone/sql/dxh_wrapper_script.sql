@@ -8,5 +8,4 @@ REM PROMPT *** executing dxh_add_tempfiles.sql ***
 REM @${SQLDIR}/dxh_add_tempfiles.sql
 REM PROMPT *** executing dxh_reset_directories.sql ***
 REM @${SQLDIR}/dxh_reset_directories.sql
-REM PROMPT *** executing dxh_drop_trigger.sql ***
-REM @${SQLDIR}/dxh_drop_trigger.sql
+
