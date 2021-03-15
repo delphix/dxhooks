@@ -6,3 +6,6 @@ REM PROMPT *** executing dxh_custom_create_user.sql ***
 REM @${SQLDIR}/dxh_custom_create_user.sql
 REM PROMPT *** executing dxh_extract_user_password.sql ***
 REM @${SQLDIR}/dxh_extract_user_password.sql
+REM PROMPT *** executing dxh_extract_grants_users.sql ***
+REM @${SQLDIR}/dxh_extract_grants_users.sql
+
