@@ -12,6 +12,6 @@ EOF
 do
   if [ "$line" ] # Line not NULL
   then 
-sqlplus -s "/ as sysdba"  @$SQLDIR/dxh_extract_all_users.sql $line $1
+sqlplus -s "/ as sysdba"  @$SQLDIR/dxh_extract_all_users_MT.sql $line $1
 fi    
 done
