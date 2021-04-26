@@ -1,6 +1,6 @@
 set long 20000 longchunksize 20000 pagesize 0 linesize 1000 feedback off verify off trimspool on 
 column ddl format a1000
-spool $SQLDIR/../../post-refresh/sql/dxh_set_grants_allusers_new.sql append; 
+spool $SQLDIR/../../post-refresh/sql/dxh_set_ddl_grants_allusers_MT.sql append; 
 ALTER SESSION SET CONTAINER ="&&2";
 
 begin
