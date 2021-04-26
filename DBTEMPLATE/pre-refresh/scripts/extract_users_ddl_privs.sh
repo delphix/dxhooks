@@ -1,10 +1,9 @@
-rm -f $SQLDIR/../../post-refresh/sql/dxh_set_grants_allusers_new.sql 
+rm -f $SQLDIR/../../post-refresh/sql/dxh_set_ddl_grants_allusers_MT.sql 
 {
 sqlplus -s "/ as sysdba"  <<EOF
 SET HEADING OFF;
 SET FEEDBACK OFF;
 SET LINESIZE 300;
-REM ALTER SESSION SET CONTAINER =$DELPHIX_PDB_NAME;
 ALTER SESSION SET CONTAINER =$1;
 SELECT username from dba_users where ORACLE_MAINTAINED='N' and username not like 'C##%' and username not like 'PDBADMIN'; 
 EOF
