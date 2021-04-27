@@ -40,6 +40,7 @@ HOOK_OP=${4}
 
 # sample code to initiate impdp
 #/softwares/scripts/hooks/dxh_impdp.sh -o ${HOOK_OP} -d '/softwares/scripts/hooks/dumpdir' -p DBTEMPLATE.impdp.delphix.par 
+# $BASEDIR/extract_users_ddl_privs.sh $DELPHIX_PDB_NAME
 
 
 
