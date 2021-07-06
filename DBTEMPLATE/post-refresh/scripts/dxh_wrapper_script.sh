@@ -47,6 +47,8 @@ HOOK_OP=${4}
 # sample code to optimize a VDB for Masking (expects ORACLE_SID and ORACLE_HOME to be set)
 # ${BASEDIR}/ora_vdb_masking_prep.sh 
 
+# $BASEDIR/recreate_users_MT.sh $DELPHIX_PDB_NAME
+
 
 
 
