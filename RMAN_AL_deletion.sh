@@ -31,7 +31,7 @@ allocate channel dsk1 type disk MAXPIECESIZE=5G;
 allocate channel dsk2 type disk MAXPIECESIZE=5G;
 sql 'alter system archive log current';
 CROSSCHECK ARCHIVELOG ALL;
-delete force noprompt archivelog all completed before 'sysdate-2';
+delete force noprompt archivelog all completed before 'sysdate-1';
 }
 EOF
 
